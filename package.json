@@ -6,8 +6,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/lab": "*",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react-dom": "^17.0.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",

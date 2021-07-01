@@ -16,7 +16,16 @@ type Props = {
     children: React.ReactNode;
 };
 
-function reducer(state, action) {
+type AlertAction = {
+    type: AlertEnum;
+    payload: any;
+};
+
+type AlertState = {
+    list: Array<AlertType>,
+};
+
+function reducer(state: AlertState, action: AlertAction) {
     switch (action.type) {
         case AlertEnum.ADD_ALERT:
             return {
@@ -46,6 +55,14 @@ export default function AlertProvider({ children }: Props) {
     };
 
     return (
-        <AlertContext.Provider value={{ addAlert, alertList: alert.list, removeAlert }}>{children}</AlertContext.Provider>
+        <AlertContext.Provider
+            value={{
+                addAlert,
+                alertList: alert.list,
+                removeAlert
+            }}
+        >
+            {children}
+        </AlertContext.Provider>
     );
 }
